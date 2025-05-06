@@ -1,19 +1,16 @@
 
 import './App.css'
+import MovieCard from './components/MovieCard'
+import Home from "./pages/Home"
 
 function App() {
+  const movieNum = 1;
   return(
     <>
-      <Text display={"Hey!!"}/>
-      <Text display={"Whats up!"}/>
+      <Home/>
     </>
   )
 }
 
-function Text({display}){
-  return(
-    <p>{display}</p>
-  )
-}
 
-export default App
+export default App;
