@@ -8,7 +8,7 @@ function Home(){
   const movies = [
     {id:1, title: "John Wick", release_date: "2020" },
     {id:2, title: "Terminator", release_date:"1999" },
-    {id:3, title: "John Wick", release_date:"1998" },
+    {id:3, title: "John James", release_date:"1998" },
   ];
 
   const handleSearch = (e)=> {
@@ -23,13 +23,13 @@ function Home(){
       
       <input type="text" placeholder="Search for movies..." className="search-input" 
       value = {searchQuery} 
-      onChange={(e) => setSearchQuery(e.target.value)} />
+      onChange={(e) => setSearchQuery(e.target.value)} /> 
 
       <button type="submit" className="search-button"></button>
     </form>
 
     <div className="movie-grid">
-      {movies.map(movie => <MovieCard movie = {movie} key = {movie.id}/> )}
+      {movies.map(movie => movie.title.toLowerCase().startsWith(searchQuery) && <MovieCard movie = {movie} key = {movie.id}/> )}
     </div>
   </div>
   )
